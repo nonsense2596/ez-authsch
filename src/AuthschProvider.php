@@ -2,7 +2,7 @@
 
 //declare(strict_types=1);
 
-namespace nonsense259\AuthschSocialite;
+namespace nonsense2596\AuthschSocialite;
 
 use Exception;
 use Illuminate\Support\Arr;

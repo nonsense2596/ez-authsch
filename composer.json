@@ -1,0 +1,41 @@
+{
+    "name": "nonsense2596/ez-authsch",
+    "description": "Authsch socialite driver",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/nonsense2596/ez-authsch",
+    "authors": [
+        {
+            "name": "Peter Szatmary",
+            "email": "szatmary.peter@vik.hk"
+        }
+    ],
+    "keywords": [
+        "authsch",
+        "laravel",
+        "socialite",
+        "oauth2"
+    ],
+    "autoload": {
+        "psr-4": {
+            "nonsense2596\\AuthschSocialite\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "laravel/socialite": "^4.1"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "nonsense2596\\AuthschSocialite\\AuthschSocialiteServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

@@ -13,6 +13,20 @@ use Laravel\Socialite\Two\ProviderInterface;
 
 class AuthschProvider extends AbstractProvider implements ProviderInterface
 {
+    protected $scopes;
+
+    protected $scopeSeparator = ' ';
+
+    public function __construct(Request $request, $clientId, $clientSecret, $redirectUrl, $guzzle = [])
+    {
+        $this->guzzle = $guzzle;
+        $this->request = $request;
+        $this->clientId = $clientId;
+        $this->redirectUrl = $redirectUrl;
+        $this->clientSecret = $clientSecret;
+
+        $this->scopes = config('services.authsch_scopes');
+    }
 
     protected function getAuthUrl($state){ 
         return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu/' . '/site/login', $state);

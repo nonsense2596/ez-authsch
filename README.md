@@ -1,5 +1,10 @@
 # ez-authsch
 
+install with this:
+```
+composer require nonsense2596/ez-authsch
+```
+
 add the following lines to config / services.php
 
 ```

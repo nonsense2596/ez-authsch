@@ -29,7 +29,7 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
     }
 
     protected function getAuthUrl($state){ 
-        return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu/' . '/site/login', $state);
+        return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu//site/login', $state);
     }
 
     protected function getTokenUrl(){   
@@ -37,7 +37,7 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
     }
 
     protected function getUserByToken($token){
-        $userUrl = 'https://auth.sch.bme.hu' . '/api/profile?access_token=' . $token;
+        $userUrl = 'https://auth.sch.bme.hu/api/profile?access_token=' . $token;
         $response = $this->getHttpClient()->get($userUrl);
         return json_decode($response->getBody(), true);
     }

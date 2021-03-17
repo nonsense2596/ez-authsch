@@ -44,7 +44,20 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
 
  
     protected function mapUserToObject(array $user){
-        ddd($user);
+        return (new User())->setRaw($user)->map([
+            'id'                            => $user['internal_id'],
+            'displayName'                   => isset($user['displayName']) ? $user['displayName'] : null,
+            'sn'                            => isset($user['sn']) ? $user['sn'] : null,
+            'givenName'                     => isset($user['givenName']) ? $user['givenName'] : null,
+            'mail'                          => isset($user['mail']) ? $user['mail'] : null,
+            'linkedAccounts'                => isset($user['linkedAccounts']) ? $user['linkedAccounts'] : null,
+            'eduPersonEntitlement'          => isset($user['eduPersonEntitlement']) ? $user['eduPersonEntitlement'] : null,
+            'mobile'                        => isset($user['mobile']) ? $user['mobile'] : null,
+            'niifEduPersonAttendedCourse'   => isset($user['niifEduPersonAttendedCourse']) ? $user['niifEduPersonAttendedCourse'] : null,
+            'entrants'                      => isset($user['entrants']) ? $user['entrants'] : null,
+            'admembership'                  => isset($user['admembership']) ? $user['admembership'] : null,
+            'bmeunitscope'                  => isset($user['bmeunitscope']) ? $user['bmeunitscope'] : null,
+        ]);
     }
 
 }

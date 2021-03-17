@@ -4,12 +4,10 @@
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/nonsense2596/ez-authsch",
-    "authors": [
-        {
-            "name": "Peter Szatmary",
-            "email": "szatmary.peter@vik.hk"
-        }
-    ],
+    "authors": [{
+        "name": "Peter Szatmary",
+        "email": "szatmary.peter@vik.hk"
+    }],
     "keywords": [
         "authsch",
         "laravel",

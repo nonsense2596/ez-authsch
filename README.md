@@ -21,9 +21,15 @@ and also the scopes you want to use
     'authsch_scopes' => [
         "basic",
         "displayName",
+        "sn",
+        "givenName",
         "mail",
+        "linkedAccounts",
         "eduPersonEntitlement",
         "mobile",
-        "bmeunitscope"
+        "niifEduPersonAttendedCourse",
+        "entrants",
+        "admembership",
+        "bmeunitscope",
     ],
 ```

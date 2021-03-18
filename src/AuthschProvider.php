@@ -28,11 +28,11 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
         $this->scopes = config('services.authsch_scopes');
     }
 
-    protected function getAuthUrl($state){ 
+    protected function getAuthUrl($state){
         return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu//site/login', $state);
     }
 
-    protected function getTokenUrl(){   
+    protected function getTokenUrl(){  
         return "https://auth.sch.bme.hu/oauth2/token";
     }
 
@@ -42,7 +42,7 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
         return json_decode($response->getBody(), true);
     }
 
- 
+
     protected function mapUserToObject(array $user){
         return (new User())->setRaw($user)->map([
             'id'                            => $user['internal_id'],

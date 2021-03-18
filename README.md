@@ -33,3 +33,9 @@ and also the scopes you want to use
         "bmeunitscope",
     ],
 ```
+
+finally run the command
+```
+php artisan vendor:publish
+```
+to automatically publish the required helper views and controllers to your laravel main directories

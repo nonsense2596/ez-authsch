@@ -19,5 +19,10 @@ class AuthschSocialiteServiceProvider extends ServiceProvider
                 return $socialite->buildProvider(AuthschProvider::class, $config);
             }
         );
+        $this->publishes([
+            __DIR__.'/Controllers' => app_path('Http/Controllers/AuthschControllers'),
+            
+            __DIR__.'/../resources/views' => resource_path('views/AuthschViews'),
+        ]);
     }
 }

@@ -42,7 +42,7 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
         $response = $this->getHttpClient()->get($userUrl);
         return json_decode($response->getBody(), true);
     }
-    
+
     protected function mapUserToObject(array $user){
         return (new User())->setRaw($user)->map([
             'id'                            => $user['internal_id'],
@@ -57,6 +57,8 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
             'entrants'                      => isset($user['entrants']) ? $user['entrants'] : null,
             'admembership'                  => isset($user['admembership']) ? $user['admembership'] : null,
             'bmeunitscope'                  => isset($user['bmeunitscope']) ? $user['bmeunitscope'] : null,
+            'permanentaddress'              => isset($user['permanentaddress']) ? $user['permanentaddress'] : null,
+            'birthdate'                     => isset($user['birthdate']) ? $user['birthdate'] : null,
         ]);
     }
 

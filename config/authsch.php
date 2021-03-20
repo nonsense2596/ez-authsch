@@ -20,5 +20,7 @@ return [
         "entrants",
         "admembership",
         "bmeunitscope",
+        "permanentaddress",
+        "birthdate",
     ],
 ];

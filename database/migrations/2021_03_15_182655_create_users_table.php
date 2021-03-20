@@ -20,13 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('sn')->nullable()->default(null);
             $table->string('givenName')->nullable()->default(null);
             $table->string('mail')->nullable()->default(null);
-            $table->string('linkedAccounts')->nullable()->default(null);
-            $table->longtext('eduPersonEntitlement')->nullable()->default(null);
             $table->string('mobile')->nullable()->default(null);
-            $table->longtext('niifEduPersonAttendedCourse')->nullable()->default(null);   // kesz kulon tablaban
-            $table->longtext('entrants')->nullable()->default(null);
-            $table->longtext('admembership')->nullable()->default(null);
             $table->string('bmeunitscope')->nullable()->default(null);
+            $table->string('permanentaddress')->nullable()->default(null);
+            $table->date('birthdate')->nullable()->default(null);
         });
     }
 

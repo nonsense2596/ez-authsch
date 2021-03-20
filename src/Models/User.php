@@ -26,5 +26,7 @@ class User extends Authenticatable
         'entrants',
         'admembership',
         'bmeunitscope',
+        'permanentaddress',
+        'birthdate',
     ];
 }

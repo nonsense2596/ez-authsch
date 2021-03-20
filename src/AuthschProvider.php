@@ -42,8 +42,7 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
         $response = $this->getHttpClient()->get($userUrl);
         return json_decode($response->getBody(), true);
     }
-
-
+    
     protected function mapUserToObject(array $user){
         return (new User())->setRaw($user)->map([
             'id'                            => $user['internal_id'],

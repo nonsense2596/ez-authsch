@@ -5,6 +5,7 @@
 namespace nonsense2596\AuthschSocialite;
 
 use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use GuzzleHttp\ClientInterface;
 use Laravel\Socialite\Two\User;
@@ -25,14 +26,14 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
         $this->redirectUrl = $redirectUrl;
         $this->clientSecret = $clientSecret;
 
-        $this->scopes = config('services.authsch_scopes');
+        $this->scopes = config('authsch.authsch_scopes');
     }
 
     protected function getAuthUrl($state){
         return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu//site/login', $state);
     }
 
-    protected function getTokenUrl(){  
+    protected function getTokenUrl(){
         return "https://auth.sch.bme.hu/oauth2/token";
     }
 

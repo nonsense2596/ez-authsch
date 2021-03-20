@@ -10,6 +10,11 @@ class LolController extends Controller
     //
     public function kex()
     {
-        return "kexx";
+        return "kex";
     }
+    public function kexx()
+    {
+        return view('authsch.lol');
+    }
+
 }

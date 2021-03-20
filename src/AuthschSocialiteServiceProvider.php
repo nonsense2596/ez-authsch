@@ -15,7 +15,7 @@ class AuthschSocialiteServiceProvider extends ServiceProvider
         $socialite->extend(
             'authsch',
             function($app) use ($socialite){
-                $config = $app['config']['services.authsch'];
+                $config = $app['config']['authsch.authsch'];
                 return $socialite->buildProvider(AuthschProvider::class, $config);
             }
         );
@@ -25,12 +25,12 @@ class AuthschSocialiteServiceProvider extends ServiceProvider
         //$this->loadViewsFrom(__DIR__.'/../resources/views', 'authsch');
         // ez meg ha jobban modositani akarjuk, anelkul, hogy egy esetleges frissites ne modositsa a dolgokat
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/AuthschViews'),
+            __DIR__.'/../resources/views' => resource_path('views/Authsch'),
         ],'views');
 
         // ----------------======== CONTROLLERS ========----------------
         $this->publishes([
-            __DIR__.'/Controllers' => app_path('Http/Controllers/AuthschControllers'),
+            __DIR__.'/Controllers' => app_path('Http/Controllers/Authsch'),
         ],'controllers');
 
         // ----------------======== CONFIG ========----------------
@@ -40,7 +40,7 @@ class AuthschSocialiteServiceProvider extends ServiceProvider
 
         // ----------------======== MODELS ========----------------
         $this->publishes([
-            __DIR__.'/Models' => app_path('Models/AuthschModels'),
+            __DIR__.'/Models' => app_path('Models/Authsch'),
         ],'models');
 
         // ----------------======== MIGRATIONS ========----------------

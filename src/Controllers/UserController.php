@@ -12,9 +12,19 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller as Controller;
 
-class IndexController extends Controller
+use Auth;
+
+class UserController extends Controller
 {
     public function index(){
-        return 'TODO implement user controller';
+        $user = Auth::user();
+        $admemberships = $user->get_ad_memberships()->get();
+        $attendedcourses = $user->get_attended_courses()->get();
+        $entrants = $user->get_entrants()->get();
+        $linkedaccounts = $user->get_linked_accounts()->get();
+        $studentclubmemberships = $user->get_student_club_memberships()->get();
+
+
+        return view('authsch.user',compact('user','admemberships','attendedcourses','entrants','linkedaccounts','studentclubmemberships'));
     }
 }

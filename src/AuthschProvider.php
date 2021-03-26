@@ -1,7 +1,5 @@
 <?php
 
-//declare(strict_types=1);
-
 namespace nonsense2596\AuthschSocialite;
 
 use Exception;
@@ -30,7 +28,7 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
     }
 
     protected function getAuthUrl($state){
-        return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu//site/login', $state);
+        return $this->buildAuthUrlFromBase('https://auth.sch.bme.hu/site/login', $state);
     }
 
     protected function getTokenUrl(){
@@ -45,20 +43,20 @@ class AuthschProvider extends AbstractProvider implements ProviderInterface
 
     protected function mapUserToObject(array $user){
         return (new User())->setRaw($user)->map([
-            'id'                            => $user['internal_id'],
-            'displayName'                   => isset($user['displayName']) ? $user['displayName'] : null,
-            'sn'                            => isset($user['sn']) ? $user['sn'] : null,
-            'givenName'                     => isset($user['givenName']) ? $user['givenName'] : null,
-            'mail'                          => isset($user['mail']) ? $user['mail'] : null,
-            'linkedAccounts'                => isset($user['linkedAccounts']) ? $user['linkedAccounts'] : null,
-            'eduPersonEntitlement'          => isset($user['eduPersonEntitlement']) ? $user['eduPersonEntitlement'] : null,
-            'mobile'                        => isset($user['mobile']) ? $user['mobile'] : null,
-            'niifEduPersonAttendedCourse'   => isset($user['niifEduPersonAttendedCourse']) ? $user['niifEduPersonAttendedCourse'] : null,
-            'entrants'                      => isset($user['entrants']) ? $user['entrants'] : null,
-            'admembership'                  => isset($user['admembership']) ? $user['admembership'] : null,
-            'bmeunitscope'                  => isset($user['bmeunitscope']) ? $user['bmeunitscope'] : null,
-            'permanentaddress'              => isset($user['permanentaddress']) ? $user['permanentaddress'] : null,
-            'birthdate'                     => isset($user['birthdate']) ? $user['birthdate'] : null,
+            'id'                            => Arr::get($user,'internal_id'),
+            'displayName'                   => Arr::get($user,'displayName',null),
+            'sn'                            => Arr::get($user,'sn',null),
+            'givenName'                     => Arr::get($user,'givenName',null),
+            'mail'                          => Arr::get($user,'mail',null),
+            'linkedAccounts'                => Arr::get($user,'linkedAccounts',null),
+            'eduPersonEntitlement'          => Arr::get($user,'eduPersonEntitlement',null),
+            'mobile'                        => Arr::get($user,'mobile',null),
+            'niifEduPersonAttendedCourse'   => Arr::get($user,'niifEduPersonAttendedCourse',null),
+            'entrants'                      => Arr::get($user,'entrants',null),
+            'admembership'                  => Arr::get($user,'admembership',null),
+            'bmeunitscope'                  => Arr::get($user,'bmeunitscope',null),
+            'permanentaddress'              => Arr::get($user,'permanentaddress',null),
+            'birthdate'                     => Arr::get($user,'birthdate',null),
         ]);
     }
 

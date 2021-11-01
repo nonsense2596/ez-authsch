@@ -1,5 +1,7 @@
 # ez-authsch
 
+A Laravel socialite oauth2 module for authsch (https://auth.sch.bme.hu/)
+
 install with this:
 ```
 composer require nonsense2596/ez-authsch
